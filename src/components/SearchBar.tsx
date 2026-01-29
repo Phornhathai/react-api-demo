@@ -12,6 +12,12 @@ export default function SearchBar(props: SearchBarProps) {
     console.log("Search term submitted:", term);
     props.onSearch(term);
   };
+  // create event handler for onChange
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+    const value = event.target.value;
+    setTerm(value);
+  };
   // if use button with onClick
   // const handleSubmit = () => {
   //   e.preventDefault();
@@ -32,12 +38,12 @@ export default function SearchBar(props: SearchBarProps) {
       </div> */}
       <form onSubmit={handleSubmit}>
         <input
+          style={{ marginBottom: "10px" }}
           type="text"
           placeholder="Search images..."
           value={term}
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={handleOnChange}
         />
-        <button type="submit">Search</button>
       </form>
     </>
   );

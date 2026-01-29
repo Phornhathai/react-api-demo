@@ -2,9 +2,10 @@ import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import searchImages from "./api";
 import ImageList from "./components/ImageList";
+import type { Image } from "./types";
 
 function App() {
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<Image[]>([]);
 
   const handleSearch = async (query: string) => {
     // TODO: call search API here with the query

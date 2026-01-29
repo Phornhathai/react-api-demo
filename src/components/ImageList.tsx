@@ -1,14 +1,23 @@
+import type { Image } from "../types";
 import ImageShow from "./ImageShow";
 
 interface ImageListProps {
-  images: string[];
+  images: Image[];
 }
+
+
 
 export default function ImageList({ images }: ImageListProps) {
   return (
-    <div>
-      {images.map((image, index) => {
-        return <ImageShow key={index} image={image} />;
+    <div
+      style={{
+        gridGap: "10px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+        display: "grid",
+      }}
+    >
+      {images.map((image, _) => {
+        return <ImageShow key={image.id} image={image} />;
       })}
     </div>
   );
