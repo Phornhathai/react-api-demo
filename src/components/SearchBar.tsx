@@ -42,7 +42,8 @@ export default function SearchBar(props: SearchBarProps) {
           type="text"
           placeholder="Search images..."
           value={term}
-          onChange={handleOnChange}
+          // onChange={handleOnChange}
+          onChange={(e) => setTerm(e.target.value)}
         />
       </form>
     </>

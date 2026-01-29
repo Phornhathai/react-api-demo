@@ -5,8 +5,6 @@ interface ImageListProps {
   images: Image[];
 }
 
-
-
 export default function ImageList({ images }: ImageListProps) {
   return (
     <div
@@ -14,6 +12,7 @@ export default function ImageList({ images }: ImageListProps) {
         gridGap: "10px",
         gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
         display: "grid",
+        gridAutoRows: "auto",
       }}
     >
       {images.map((image, _) => {

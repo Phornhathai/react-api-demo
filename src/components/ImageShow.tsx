@@ -8,10 +8,11 @@ export default function ImageShow({ image }: ImageShowProps) {
   return (
     <div
       style={{
-        width: "100%",
-        height: "200px",
         marginBottom: "10px",
         overflow: "hidden",
+        height: "100%",
+        borderRadius: "8px",
+        padding: "10px",
       }}
     >
       <div className="info" style={{ marginBottom: "5px" }}>
