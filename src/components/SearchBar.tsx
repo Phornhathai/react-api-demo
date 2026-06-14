@@ -7,7 +7,7 @@ interface SearchBarProps {
 export default function SearchBar(props: SearchBarProps) {
   const [term, setTerm] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     console.log("Search term submitted:", term);
     props.onSearch(term);
